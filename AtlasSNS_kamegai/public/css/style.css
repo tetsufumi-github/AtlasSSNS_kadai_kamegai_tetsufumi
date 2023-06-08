@@ -1,0 +1,996 @@
+@charset "utf-8";
+
+html {
+    height: 100%;
+    /* HTML要素の高さを100%に設定 */
+}
+
+body {
+    height: 100%;
+    /* body要素の高さを100%に設定 */
+    color: #333;
+    /* テキストの色を #333 に指定 */
+}
+
+/* header----------------------------------------------------------------------------------------------------------------- */
+header {
+    background: #186AC9;
+    /* ヘッダーの背景色を #186AC9 に設定 */
+    height: 100px;
+    /* ヘッダーの高さを100pxに設定 */
+    display: flex;
+    /* 子要素をフレックスボックスとして表示 */
+    justify-content: space-between;
+    /* 子要素を水平方向に均等に配置 */
+    align-items: center;
+    /* 子要素を垂直方向に中央揃え */
+}
+
+h1 {
+    margin-left: 25px;
+    /* h1要素の左側の余白を25pxに設定 */
+}
+
+
+/* header----------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* アコーディオンメニュー用スタイル------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#user_list {
+    width: 280px;
+    /* idがuser_listの要素の幅を280pxに設定 */
+    margin-right: 50px;
+    /* idがuser_listの要素の右側の余白を50pxに設定 */
+    display: flex;
+    /* 子要素をフレックスボックスとして表示 */
+    justify-content: space-around;
+    /* 子要素を水平方向に均等に配置 */
+    align-items: center;
+    /* 子要素を垂直方向に中央揃え */
+    color: #FFF;
+    /* テキストの色を #FFF (白)に指定 */
+    font-weight: bold;
+    /* テキストの太さをboldに設定 */
+}
+
+
+.d_arrow {
+    width: 30px;
+    /* classがd_arrowの要素の幅を30pxに設定 */
+    height: 30px;
+    /* classがd_arrowの要素の高さを30pxに設定 */
+    display: flex;
+    /* 子要素をフレックスボックスとして表示 */
+    justify-content: center;
+    /* 子要素を水平方向に中央揃え */
+    align-items: center;
+    /* 子要素を垂直方向に中央揃え */
+    cursor: pointer;
+    /* カーソルをポインターに変更 */
+    position: relative;
+    /* 相対位置に配置 */
+}
+
+.dropdown-toggle_left {
+    position: absolute;
+    /* 絶対位置に配置 */
+    top: 0;
+    /* 上端からの位置を0に設定 */
+    left: 8px;
+    /* 左端からの位置を8pxに設定 */
+    height: 26px;
+    /* 高さを26pxに設定 */
+    border-left: 4px solid;
+    /* 左側の境界線を4pxの実線に設定 */
+    transform-origin: center;
+    /* 回転の基準点を中央に設定 */
+    transform: skewX(20deg);
+    /* X軸方向に20度傾ける */
+}
+
+.dropdown-toggle_right {
+    position: absolute;
+    /* 絶対位置に配置 */
+    top: 0;
+    /* 上端からの位置を0に設定 */
+    right: 8px;
+    /* 右端からの位置を8pxに設定 */
+    height: 26px;
+    /* 高さを26pxに設定 */
+    border-right: 4px solid;
+    /* 右側の境界線を4pxの実線に設定 */
+    transform-origin: center;
+    /* 回転の基準点を中央に設定 */
+    transform: skewX(-20deg);
+    /* X軸方向に-20度傾ける */
+}
+
+/* d_arrowをクリックすると、回転する */
+.rotate {
+    transform: rotate(180deg);
+    /* 180度回転させる */
+    transition: transform 0.3s ease;
+    /* 変化を滑らかに0.3秒で行う */
+}
+
+
+
+
+/* ドロップダウンメニューのスタイル */
+#d_menu ul {
+    position: absolute;
+    /* 絶対位置に配置 */
+    top: 100px;
+    /* 上端からの位置を100pxに設定 */
+    right: 0;
+    /* 右端からの位置を0に設定 */
+    background-color: #fff;
+    /* 背景色を #fff (白)に設定 */
+}
+
+#d_menu ul li {
+    position: relative;
+    /* 相対位置に配置 */
+    width: 100%;
+    /* 幅を100%に設定 */
+    float: none;
+    /* フロートを解除 */
+}
+
+#d_menu ul a {
+    display: block;
+    /* ブロック要素として表示 */
+    padding: 10px;
+    /* 内側の余白を10pxに設定 */
+    border: 2px #00297E solid;
+    /* 2pxの実線で境界線を設定 */
+    width: 280px;
+    /* 幅を280pxに設定 */
+    height: 70px;
+    /* 高さを70pxに設定 */
+    color: #555;
+    /* テキストの色を #555 に指定 */
+    font-size: 32px;
+    /* テキストのサイズを32pxに設定 */
+    text-decoration: none;
+    /* 下線を削除 */
+    display: flex;
+    /* 子要素をフレックスボックスとして表示 */
+    justify-content: center;
+    /* 子要素を水平方向に中央揃え */
+    align-items: center;
+    /* 子要素を垂直方向に中央揃え */
+}
+
+#d_menu ul a:hover {
+    background-color: #00297E;
+    /* ホバー時の背景色を #00297E に設定 */
+    color: #FFF;
+    /* ホバー時のテキスト色を #FFF (白)に設定 */
+}
+
+
+/* アコーディオンメニュー用スタイル----------------------------------------------------------------------------------- */
+
+/* main content ---------------------------------------------------------------------------------*/
+#row {
+    display: flex;
+    /* フレックスコンテナとして要素を横に並べる */
+    flex-flow: row wrap;
+    /* 行方向にフレックスアイテムをラップする */
+}
+
+#container {
+    flex: 0 0 80%;
+    /* 幅を固定 */
+    height: 100%;
+    /* 高さを100%に設定 */
+    position: relative;
+    /* 相対的な位置付け */
+    border-right: 1px solid;
+    /* 右側に1pxの実線のボーダーを持つ */
+}
+
+/* main content ----------------------------------------------------------------------------------*/
+
+
+/* 共有サイドバー----------------------------------------------------------------------------------*/
+
+#side-bar {
+    flex: 0 0 19%;
+    /* 幅を固定 */
+    height: 100%;
+    /* 高さを100%に設定 */
+}
+
+.username,
+.section-title {
+    font-weight: bold;
+    /* 太字のテキスト */
+    padding: 1rem;
+    /* 1remの余白を持つ */
+}
+
+#f_cnt {
+    border-bottom: 1px solid;
+    /* 下部に1pxの実線のボーダーを持つ */
+    padding-bottom: 2rem;
+    /* 下部に2remの余白を持つ */
+}
+
+.btn_cnt_f {
+    display: flex;
+    /* 要素を右寄せに表示 */
+    justify-content: flex-end;
+    /* 右寄せ */
+}
+
+.btn_cnt_sah {
+    display: flex;
+    /* 要素を中央に表示 */
+    justify-content: center;
+    /* 中央揃え */
+}
+
+.f_btn,
+.sah_btn {
+    width: 160px;
+    /* 幅を160pxに設定 */
+    display: inline-block;
+    /* インラインブロック要素として表示 */
+    padding: 15px 10px;
+    /* パディング */
+    font-size: 16px;
+    /* フォントサイズ */
+    text-align: center;
+    /* テキストの中央揃え */
+    text-decoration: none;
+    /* テキストの装飾なし */
+    border: 1px solid #ccc;
+    /* 1pxの実線のボーダー */
+    border-radius: 4px;
+    /* 角丸のボーダー */
+    cursor: pointer;
+    /* カーソルの形状をポインターに設定 */
+    background-color: #186AC9;
+    /* 背景色 */
+    color: #FFF;
+    /* テキストの色 */
+}
+
+.f_btn {
+    padding-right: 1rem;
+    /* 右側に1remのパディングを持つ */
+}
+
+.sah_btn {
+    margin-top: 2rem;
+    /* 上部に2remのマージンを持つ */
+}
+
+/* 共有サイドバー-----------------------------------------------------------------------------------*/
+
+
+
+/* 投稿--------------------------------------------------------------------------------------- */
+
+
+/* 投稿フォーム */
+.post-body {
+    /* 投稿の本文を含む要素のスタイル */
+    position: relative;
+    /* 位置を相対的に指定 */
+    margin-top: 30px;
+    /* 上部に30ピクセルの余白を追加 */
+}
+
+.post-body .login_user_icon {
+    /* ログインユーザーのアイコンを含む要素のスタイル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    top: 0;
+    /* 上端に配置 */
+    left: 2rem;
+    /* 左端から2remの位置に配置 */
+}
+
+/* 投稿フォームのテキスト */
+textarea {
+    /* テキストエリアのスタイル */
+    width: 800px;
+    /* 幅800ピクセル */
+    height: 150px;
+    /* 高さ150ピクセル */
+    margin-left: 100px;
+    /* 左側に100ピクセルの余白を追加 */
+    padding: 1rem;
+    /* 内側の余白を1remに設定 */
+    font-size: 16px;
+    /* フォントサイズ16ピクセル */
+    border: none;
+    /* 境界線を削除 */
+    resize: none;
+    /* リサイズ不可 */
+    outline: none;
+    /* クリック時のアウトラインを削除 */
+}
+
+/* 投稿ボタン */
+.post-button {
+    /* 投稿ボタンのスタイル */
+    width: 50px;
+    /* 幅50ピクセル */
+    height: 50px;
+    /* 高さ50ピクセル */
+    padding: 0;
+    /* 内側の余白を削除 */
+    border: none;
+    /* 境界線を削除 */
+    cursor: pointer;
+    /* カーソルをポインターに設定 */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    right: 10rem;
+    /* 右端から10remの位置に配置 */
+    bottom: 1rem;
+    /* 下端から1remの位置に配置 */
+}
+
+/* 編集と削除ボタン */
+.post-button img {
+    /* ボタン内の画像のスタイル */
+    width: 100%;
+    /* 幅100% */
+    height: 100%;
+    /* 高さ100% */
+}
+
+/* 投稿一覧 */
+.media {
+    /* 投稿一覧のスタイル */
+    margin-bottom: 30px;
+    /* 下部に30ピクセルの余白を追加 */
+    padding: 1rem;
+    /* 内側の余白を1remに設定 */
+    border-top: 1px solid;
+    /* 上部に1ピクセルの実線を追加 */
+    position: relative;
+    /* 位置を相対的に指定 */
+}
+
+.media:nth-child(1) {
+    /* 最初の投稿のスタイル */
+    border-top: 10px gray solid;
+    /* 上部に10ピクセルの灰色の実線を追加 */
+}
+
+/* 投稿した時間 */
+.time_at {
+    /* 投稿した時間のスタイル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    top: 1rem;
+    /* 上端から1remの位置に配置 */
+    right: 2rem;
+    /* 右端から2remの位置に配置 */
+    font-size: 12px;
+    /* フォントサイズ12ピクセル */
+    font-weight: bold;
+    /* 太字のフォントウェイト */
+}
+
+.media-body {
+    /* 投稿一覧内の本文のスタイル */
+    margin-left: 82px;
+    /* 左側に82ピクセルの余白を追加 */
+    width: 900px;
+    /* 幅900ピクセル */
+    line-height: 1.8;
+    /* 行の高さを1.8倍に設定 */
+}
+
+/* 投稿一覧の全てのユーザーの投稿 */
+.users {
+    /* 全てのユーザーの投稿のスタイル */
+    margin: 1rem;
+    /* 余白を1remに設定 */
+    display: flex;
+    /* 要素をフレックスボックスとして表示 */
+    align-items: center;
+    /* 要素を垂直方向に中央揃え */
+}
+
+.users img {
+    /* ユーザーのアイコンのスタイル */
+    padding-right: 1rem;
+    /* 右側に1remの余白を追加 */
+}
+
+
+/* 投稿-------------------------------------------------------------------------------------------- */
+
+/* 編集 ---------------------------------------------------------------------------------------------*/
+
+/* 投稿一覧のボタン表示と配置 */
+.update-button,
+.update-button img {
+    /* ボタンのスタイル */
+    width: 32px;
+    /* 幅32ピクセル */
+    height: 32px;
+    /* 高さ32ピクセル */
+    cursor: pointer;
+    /* カーソルをポインターに設定 */
+}
+
+.update-button {
+    /* ボタン要素のスタイル */
+    position: relative;
+    /* 位置を相対的に指定 */
+    padding: 0;
+    /* 内側の余白を削除 */
+    border: none;
+    /* 境界線を削除 */
+    background: none;
+    /* 背景を透明に設定 */
+}
+
+.button-text {
+    /* ボタン内のテキスト要素のスタイル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    top: 0;
+    /* 上端に配置 */
+    left: 0;
+    /* 左端に配置 */
+    display: flex;
+    /* 要素をフレックスボックスとして表示 */
+    align-items: center;
+    /* 要素を垂直方向に中央揃え */
+    justify-content: center;
+    /* 要素を水平方向に中央揃え */
+    width: 100%;
+    /* 幅100% */
+    height: 100%;
+    /* 高さ100% */
+}
+
+.button-text img {
+    /* ボタン内の画像のスタイル */
+    max-width: 100%;
+    /* 最大幅を100%に設定 */
+    max-height: 100%;
+    /* 最大高さを100%に設定 */
+}
+
+.edit {
+    /* 編集ボタンのスタイル */
+    width: 32px;
+    /* 幅32ピクセル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    right: 6rem;
+    /* 右端から6remの位置に配置 */
+}
+
+.trash {
+    /* 削除ボタンのスタイル */
+    width: 32px;
+    /* 幅32ピクセル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    right: 2rem;
+    /* 右端から2remの位置に配置 */
+}
+
+.content {
+    /* コンテンツのスタイル */
+    margin: 0 auto;
+    /* 左右の余白を自動で調整 */
+    padding: 40px;
+    /* 内側の余白を40pxに設定 */
+}
+
+.modal {
+    /* モーダルのスタイル */
+    display: none;
+    /* 非表示 */
+    height: 100vh;
+    /* 画面の高さいっぱいに設定 */
+    position: fixed;
+    /* 固定された位置に配置 */
+    width: 100%;
+    /* 画面の幅いっぱいに設定 */
+    position: fixed;
+    /* 固定された位置に配置 */
+    top: 50%;
+    /* 上端から50%の位置に配置 */
+    left: 50%;
+    /* 左端から50%の位置に配置 */
+    transform: translate(-50%, -50%);
+    /* 中央に配置 */
+    z-index: 9999;
+    /* 最前面に表示 */
+}
+
+.modal__bg {
+    /* モーダルの背景のスタイル */
+    background: rgba(0, 0, 0, 0.8);
+    /* 半透明の黒色の背景 */
+    height: 100vh;
+    /* 画面の高さいっぱいに設定 */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    width: 100%;
+    /* 画面の幅いっぱいに設定 */
+}
+
+.modal__content_edit {
+    /* 編集モーダルのコンテンツのスタイル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    left: 50%;
+    /* 左端から50%の位置に配置 */
+    top: 50%;
+    /* 上端から50%の位置に配置 */
+    transform: translate(-50%, -50%);
+    /* 中央に配置 */
+    width: 70%;
+    /* 幅70% */
+    background-color: #fff;
+    /* 背景色を白に設定 */
+    padding: 20px;
+    /* 内側の余白を20pxに設定 */
+    border-radius: 5px;
+    /* 角丸に設定 */
+}
+
+.modal__content_edit input {
+    /* 編集モーダル内の入力フィールドのスタイル */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    right: 0;
+    /* 右端に配置 */
+    bottom: 0;
+    /* 下端に配置 */
+}
+
+/* 編集 ---------------------------------------------------------------------------------------------*/
+
+
+/* 削除 ---------------------------------------------------------------------------------------------*/
+
+/* 投稿一覧のボタン表示と配置 */
+.modal__content_delete {
+    /* 削除モーダルのコンテンツのスタイル */
+    padding: 1rem;
+    /* 内側の余白を1remに設定 */
+    border: 1px solid #ccc;
+    /* 1pxのグレーの境界線を設定 */
+    background-color: #FFF;
+    /* 背景色を白に設定 */
+    left: 50%;
+    /* 左端から50%の位置に配置 */
+    position: absolute;
+    /* 位置を絶対的に指定 */
+    transform: translate(-50%);
+    /* 中央に配置 */
+    width: 500px;
+    /* 幅500px */
+    height: 100px;
+    /* 高さ100px */
+}
+
+.delete_btn-cnt {
+    /* 削除ボタンのコンテナのスタイル */
+    text-align: right;
+    /* 右寄せに配置 */
+    width: 500px;
+    /* 幅500px */
+}
+
+.d_btn {
+    /* 削除ボタンのスタイル */
+    font-size: 15px;
+    /* フォントサイズ15px */
+    margin-top: 2rem;
+    /* 上側に2remの余白を追加 */
+    margin-right: 10px;
+    /* 右側に10pxの余白を追加 */
+    padding: 1rem 2rem;
+    /* 上下に1rem、左右に2remの余白を設定 */
+    border-radius: 5px;
+    /* 角丸に設定 */
+    cursor: pointer;
+    /* カーソルをポインターに設定 */
+}
+
+.d_btn:first-child {
+    /* 最初の削除ボタンのスタイル */
+    background-color: blue;
+    /* 背景色を青に設定 */
+    color: #fff;
+    /* テキスト色を白に設定 */
+    border: none;
+    /* 境界線を削除 */
+}
+
+.d_btn:nth-child(2) {
+    /* 2番目の削除ボタンのスタイル */
+    padding: 1rem 2rem;
+    /* 上下に1rem、左右に2remの余白を設定 */
+    background-color: lightgrey;
+    /* 背景色を薄いグレーに設定 */
+    border: 1px solid;
+    /* 1pxの境界線を設定 */
+}
+
+
+
+/* 削除 ---------------------------------------------------------------------------------------------*/
+
+/* 検索 ---------------------------------------------------------------------------------------------*/
+
+/* 検索フォーム */
+
+/* 検索フォームのコンテナ */
+.search_cnt {
+    width: 100%;
+    /* 幅を100%に設定 */
+    height: 150px;
+    /* 高さを150pxに設定 */
+    margin: 1rem;
+    /* 上下左右の余白を1remに設定 */
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+}
+
+/* 検索フォームのフォーム要素 */
+.search_cnt form {
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+}
+
+/* 検索フォームの入力フィールド */
+.search_cnt input {
+    width: 400px;
+    /* 幅を400pxに設定 */
+    font-size: 24px;
+    /* フォントサイズを24pxに設定 */
+    margin-left: 2rem;
+    /* 左側の余白を2remに設定 */
+    padding: 0.5rem;
+    /* 内側の余白を0.5remに設定 */
+    border: 1px solid #ccc;
+    /* 1pxのグレーの境界線を設定 */
+    border-radius: 4px;
+    /* 角丸を4pxに設定 */
+}
+
+/* 検索フォームのボタン */
+.search_cnt button {
+    font-size: 24px;
+    /* フォントサイズを24pxに設定 */
+    border: none;
+    /* 境界線をなしに設定 */
+    background-color: #FFF;
+    /* 背景色を白に設定 */
+}
+
+/* 検索フォームの画像 */
+.search_cnt img {
+    border-radius: 4px;
+    /* 角丸を4pxに設定 */
+    width: 49px;
+    /* 幅を49pxに設定 */
+    cursor: pointer;
+    /* マウスが重なった時のカーソルをポインターに設定 */
+    vertical-align: top;
+    /* 垂直方向に上揃え */
+}
+
+/* 検索結果メッセージ */
+.res {
+    display: none;
+    /* 表示しない */
+    margin-left: 100px;
+    /* 左側の余白を100pxに設定 */
+    font-size: 24px;
+    /* フォントサイズを24pxに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+}
+
+/* 検索結果なしメッセージ */
+.no_results {
+    height: 500px;
+    /* 高さを500pxに設定 */
+    padding-left: 2rem;
+    /* 左側の余白を2remに設定 */
+    font-size: 24px;
+    /* フォントサイズを24pxに設定 */
+}
+
+.user_list_res
+{
+    height: 500px;
+    /* 高さを500pxに設定 footerが上に浮くのを防ぐ*/
+}
+
+
+/* 検索リスト */
+
+/* ユーザーコンテナ */
+.user {
+    padding-top: 50px;
+    /* 上側の余白を50pxに設定 */
+    padding-left: 1rem;
+    /* 左側の余白を1remに設定 */
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+    justify-content: center;
+    /* 中央揃えに配置 */
+}
+
+/* ユーザー名 */
+.user span {
+    width: 200px;
+    /* 幅を200pxに設定 */
+    padding-left: 20px;
+    /* 左側の余白を20pxに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+}
+
+/* 最初のユーザーコンテナ */
+.user:nth-child(1) {
+    border-top: 10px solid grey;
+    /* 上側に10pxの灰色の境界線を設定 */
+    margin-top: 30px;
+    /* 上側の余白を30pxに設定 */
+}
+
+/* 最後のユーザーコンテナ */
+.user:last-child {
+    margin-bottom: 30px;
+    /* 下側の余白を30pxに設定 */
+}
+
+/* フォロー解除ボタン */
+.btn-unfollow {
+    margin-left: 1rem;
+    /* 左側の余白を1remに設定 */
+    border: none;
+    /* 境界線をなしに設定 */
+    border-radius: 8px;
+    /* 角丸を8pxに設定 */
+    cursor: pointer;
+    /* マウスが重なった時のカーソルをポインターに設定 */
+    padding: 10px 1rem;
+    /* 上下の余白を10px、左右の余白を1remに設定 */
+    background-color: #FF0000;
+    /* 背景色を赤に設定 */
+    color: #ffffff;
+    /* テキストの色を白に設定 */
+    /* その他のスタイルプロパティ */
+}
+
+/* フォローするボタン */
+.btn-follow {
+    margin-left: 1rem;
+    /* 左側の余白を1remに設定 */
+    border: none;
+    /* 境界線をなしに設定 */
+    border-radius: 8px;
+    /* 角丸を8pxに設定 */
+    cursor: pointer;
+    /* マウスが重なった時のカーソルをポインターに設定 */
+    padding: 10px 1rem;
+    /* 上下の余白を10px、左右の余白を1remに設定 */
+    background-color: #007bff;
+    /* 背景色を青に設定 */
+    color: #ffffff;
+    /* テキストの色を白に設定 */
+    /* その他のスタイルプロパティ */
+}
+
+/* 検索 ---------------------------------------------------------------------------------------------*/
+
+/* フォロートフォロワーリスト共有 --------------------------------------------------------------------------------------*/
+
+/* フォロートフォロワーリスト共有のコンテナ */
+.f_list_cnt {
+    width: auto;
+    /* 幅を自動調整 */
+    padding-top: 2rem;
+    /* 上側の余白を2remに設定 */
+    padding-left: 50px;
+    /* 左側の余白を50pxに設定 */
+    height: 200px;
+    /* 高さを200pxに設定 */
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    justify-content: left;
+    /* 左揃えに配置 */
+}
+
+/* フォロートフォロワーリスト共有のテキストスタイル */
+.f_list_cnt span {
+    padding-right: 1rem;
+    /* 右側の余白を1remに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+    font-size: 32px;
+    /* フォントサイズを32pxに設定 */
+}
+
+/* フォロートフォロワーリスト共有のアイコン */
+.f_list_icons {
+    width: 600px;
+    /* 幅を600pxに設定 */
+    height: auto;
+    /* 高さを自動調整 */
+}
+
+/* フォロートフォロワーリスト共有-------------------------------------------------------------------------------------- */
+
+/* 相手のプロフィール --------------------------------------------------------------------------------------*/
+
+/* 相手のプロフィールのコンテナ */
+.p_cnt {
+    width: auto;
+    /* 幅を自動調整 */
+    padding-top: 2rem;
+    /* 上側の余白を2remに設定 */
+    padding-left: 50px;
+    /* 左側の余白を50pxに設定 */
+    height: 200px;
+    /* 高さを200pxに設定 */
+    position: relative;
+    /* 相対的な位置指定を有効化 */
+}
+
+/* 相手のプロフィールのテキストスタイル */
+.p_cnt p {
+    margin-left: 80px;
+    /* 左側の余白を80pxに設定 */
+    font-size: 24px;
+    /* フォントサイズを24pxに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+    line-height: 2;
+    /* 行の高さを2倍に設定 */
+}
+
+/* 相手のプロフィールのボタン */
+.p_btn {
+    position: absolute;
+    /* 絶対的な位置指定を有効化 */
+    right: 1rem;
+    /* 右側の余白を1remに設定 */
+    bottom: 2rem;
+    /* 下側の余白を2remに設定 */
+}
+
+/* 相手のプロフィール --------------------------------------------------------------------------------------*/
+
+/* プロフィール編集 --------------------------------------------------------------------------------------*/
+
+/* プロフィール編集のアイコン */
+.p_icon {
+    position: absolute;
+    /* 絶対的な位置指定を有効化 */
+    top: 35px;
+    /* 上側の余白を35pxに設定 */
+    left: 300px;
+    /* 左側の余白を300pxに設定 */
+}
+
+/* プロフィール編集のコンテナ */
+.p_from_cnt {
+    position: relative;
+    /* 相対的な位置指定を有効化 */
+    margin-left: auto;
+    /* 左側の余白を自動調整 */
+    padding-top: 2rem;
+    /* 上側の余白を2remに設定 */
+    padding-right: 2rem;
+    /* 右側の余白を2remに設定 */
+    width: 800px;
+    /* 幅を800pxに設定 */
+}
+
+/* プロフィール編集の項目 */
+.item_cnt {
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    justify-content: space-between;
+    /* 要素間のスペースを均等に配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+    font-size: 18px;
+    /* フォントサイズを18pxに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+    margin-bottom: 30px;
+    /* 下側の余白を30pxに設定 */
+}
+
+/* プロフィール編集の最後の項目 */
+.item_cnt:last-child {
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    justify-content: center;
+    /* 中央揃えに配置 */
+}
+
+/* プロフィール編集の入力フィールド */
+.p_from_cnt input[type="text"],
+.p_from_cnt input[type="email"],
+.p_from_cnt input[type="password"],
+.p_from_cnt textarea {
+    width: 70%;
+    /* 幅を70%に設定 */
+    height: 20px;
+    /* 高さを20pxに設定 */
+    padding: 10px;
+    /* 内側の余白を10pxに設定 */
+    margin-bottom: 15px;
+    /* 下側の余白を15pxに設定 */
+    border-radius: 5px;
+    /* 角丸を5pxに設定 */
+    border: 1px solid #ccc;
+    /* 1pxのグレーの境界線を設定 */
+    background-color: gainsboro;
+    /* 背景色をgainsboroに設定 */
+    font-size: 18px;
+    /* フォントサイズを18pxに設定 */
+    font-weight: bold;
+    /* 太字に設定 */
+}
+
+/* 更新ボタン */
+#update_btn {
+    padding: 10px 100px;
+    /* 上下の余白を10px、左右の余白を100pxに設定 */
+    background-color: red;
+    /* 背景色を赤に設定 */
+    color: white;
+    /* テキストの色を白に設定 */
+    border: none;
+    /* 境界線をなしに設定 */
+    border-radius: 5px;
+    /* 角丸を5pxに設定 */
+    cursor: pointer;
+    /* マウスが重なった時のカーソルをポインターに設定 */
+}
+
+/* プロフィール編集 --------------------------------------------------------------------------------------*/
+
+/* footer --------------------------------------------------------------------------------------*/
+
+/* フッター */
+footer {
+    background: #186AC9;
+    /* 背景色を青に設定 */
+    height: 50px;
+    /* 高さを50pxに設定 */
+    color: #FFF;
+    /* テキストの色を白に設定 */
+    display: flex;
+    /* flexboxを使用して要素を水平に配置 */
+    justify-content: center;
+    /* 中央揃えに配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+}
+
+/* footer --------------------------------------------------------------------------------------*/

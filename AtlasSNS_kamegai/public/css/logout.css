@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+/* 共通パーツ */
+/* ---------------------------------------------- */
+
+html {
+    height: 100%;
+    /* ページ全体の高さを100%に設定 */
+}
+
+body {
+    height: 100%;
+    /* ページ全体の高さを100%に設定 */
+    background-image: linear-gradient(0deg, #EDDE42 16%, #3695EC 50%);
+    /* 背景に線形グラデーションの画像を設定 */
+    position: relative;
+    /* 相対的な位置指定を行う */
+    color: #333;
+    /* テキストカラーを指定 */
+}
+
+a {
+    text-decoration: none;
+    /* リンクの下線をなくす */
+    color: #FFF;
+    /* リンクのテキストカラーを指定 */
+}
+
+/* 要素を配置して、上下左右を中央する。 */
+#whopper {
+    position: absolute;
+    /* 要素を絶対位置に配置 */
+    top: 50%;
+    /* 上から50%の位置に配置 */
+    left: 50%;
+    /* 左から50%の位置に配置 */
+    transform: translate(-50%, -50%);
+    /* 要素を水平・垂直方向に移動して中央に配置 */
+}
+
+header {
+    font-size: 32px;
+    /* ヘッダーのフォントサイズを指定 */
+    font-weight: bold;
+    /* ヘッダーのフォントウェイトを指定 */
+    color: #FFF;
+    /* ヘッダーのテキストカラーを指定 */
+    text-align: center;
+    /* ヘッダーのテキストを中央揃えにする */
+    padding-bottom: 1rem;
+    /* 下部の余白を指定 */
+}
+
+h1 img {
+    width: 150px;
+    /* h1要素内の画像の幅を指定 */
+}
+
+#container {
+    margin: 0;
+    /* 上下左右のマージンを0に設定 */
+    padding: 0;
+    /* 上下左右のパディングを0に設定 */
+    height: auto;
+    /* コンテナの高さを自動に設定 */
+    color: #FFF;
+    /* コンテナ内のテキストカラーを指定 */
+    display: flex;
+    /* 要素をフレックスボックスとして表示 */
+    justify-content: center;
+    /* 水平方向に中央揃えにする */
+    align-items: center;
+    /* 垂直方向に中央揃えにする */
+    font-size: 24px;
+    /* フォントサイズを指定 */
+}
+
+#container p,
+#container h2 {
+    color: #FFF;
+    /* テキストカラーを指定 */
+    text-align: center;
+    /* テキストを中央揃えにする */
+}
+
+form {
+    padding: 2rem 1.5rem;
+    /* 上下に2rem、左右に1.5remのパディングを設定 */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* フォームの背景色を設定 */
+    border-radius: 1rem;
+    /* ボーダーの角丸を指定 */
+}
+
+label {
+    display: block;
+    /* 要素をブロックレベルで表示 */
+    padding-top: 1rem;
+    /* 上部の余白を指定 */
+    font-size: 16px;
+    /* フォントサイズを指定 */
+    color: #FFF;
+    /* テキストカラーを指定 */
+    line-height: 1.6;
+    /* 行の高さを指定 */
+    text-align: left;
+    /* テキストを左揃えにする */
+}
+
+input[type="text" i],
+input[type="password" i] {
+    padding: 1rem;
+    /* 上下左右に1remのパディングを設定 */
+    font-size: 24px;
+    /* フォントサイズを指定 */
+    border-radius: 5px;
+    /* ボーダーの角丸を指定 */
+    border: none;
+    /* ボーダーをなくす */
+}
+
+#login_items_list {
+    font-size: 24px;
+    /* フォントサイズを指定 */
+}
+
+input[type="submit" i],
+#login_btn {
+    padding: 5px 30px;
+    /* 上下に5px、左右に30pxのパディングを設定 */
+    font-size: 24px;
+    /* フォントサイズを指定 */
+    color: #FFF;
+    /* テキストカラーを指定 */
+    background-color: red;
+    /* ボタンの背景色を設定 */
+    border: none;
+    /* ボーダーをなくす */
+    border-radius: 5px;
+    /* ボーダーの角丸を指定 */
+    cursor: pointer;
+    /* マウスカーソルをポインターにする */
+}
+
+/* ボタンの配置を右側にする。 */
+.btn {
+    text-align: right;
+    /* テキストを右揃えにする */
+    margin: 2rem 0;
+    /* 上下に2remのマージンを設定 */
+}
+
+/* register */
+/* ---------------------------------------------- */
+
+input[type="email" i] {
+    padding: 1rem;
+    /* 上下左右に1remのパディングを設定 */
+    font-size: 24px;
+    /* フォントサイズを指定 */
+    border-radius: 5px;
+    /* ボーダーの角丸を指定 */
+    border: none;
+    /* ボーダーをなくす */
+}
+
+/* added */
+/* ---------------------------------------------- */
+
+#clear {
+    padding: 1rem;
+    /* 上下左右に1remのパディングを設定 */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 背景色と透明度を設定 */
+    border-radius: 1rem;
+    /* ボーダーの角丸を指定 */
+    line-height: 1.6;
+    /* 行の高さを指定 */
+}
+
+#new_registrant {
+    font-weight: bold;
+    /* フォントのウェイトを太字に設定 */
+    margin: 1rem 0;
+    /* 上下に1remのマージンを設定 */
+}
+
+/* added */
+/* ---------------------------------------------- */

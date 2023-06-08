@@ -1,0 +1,83 @@
+
+/////////////////////////////////
+コマンドは管理者として実行しよう。
+xampppはアパッチとSQLを起動しよう
+////////////////////////////////
+
+php artisan serve
+
+MySQL
+
+1.コマンドソフト(Cmber)を開いて[cd]コマンドで以下のディレクトリに移動する。
+
+cd/xampp/mysql/bin
+
+2.以下のコマンドてMySQLにログインする。
+
+mysql -u root -p
+
+(1と2は、セミコロンいらない)
+
+データベースを作成
+CREATE DATABASE SNS;
+
+マイグレーション
+ディレクトリがC:\Users\Tetsu_DK\AtlasSNS>の時
+
+php artisan migrate
+
+
+3.MySQLにログインできたら、以下のSLQ文を打ち込む。
+
+
+テーブル一覧を確認
+
+show tables;
+
+テーブル定義の確認。
+**********************************
+
+desc follows;
+
+desc migrations;
+
+desc users;
+
+desc potos;
+
+*************************************
+
+シードファイル作成コマンド(ユーザー登録)
+
+php artisan make:seeder UsersTableSeeder
+
+作成したシートファイルを実行!!
+php artisan db:seed --class=UsersTableSeeder
+
+
+ユーザーリスト
+-------------------------------------------------------------------
+jiro
+jiro@aaa.jp
+jiro1234
+
+saburo
+saburo@aaa.jp
+saburo1234
+
+yonro
+yonro@aaa.jp
+yonro1234
+
+goro
+goro@aaa.jp
+goro1234
+
+gonta
+gonta@aaa.jp
+gonta1234
+
+
+-------------------------------------------------------------------
+
+
