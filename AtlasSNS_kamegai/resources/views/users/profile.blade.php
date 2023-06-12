@@ -5,7 +5,7 @@
 {{-- プロフィール編集 --}}
 @if ($_GET['id'] == Auth::user()->id)
     <figure class="p_icon">
-    <img src="../images/icons/{{ Auth::user()->images }}" alt="icon" width="50px">
+    <img src="{{ asset('storage/images/icons/' . Auth::user()->images)}}" alt="icon" width="50px">
     </figure>
     <div class="p_from_cnt">
     <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
@@ -85,7 +85,7 @@
 {{-- 相手のプロフィール --}}
 @else
     <div class="p_cnt">
-    <img src="../images/icons/{{ $specifiedUser->images }}" width="50px" alt="icon">
+    <img src="{{ asset('storage/images/icons/' .$specifiedUser->images) }}" width="50px" alt="icon">
     <p>name:　　　{{ $specifiedUser->username }}</p>
     <p>bio:　　　　{{ $specifiedUser->bio }}</p>
 
@@ -162,7 +162,7 @@
             <div class="media">
                 <span class="time_at">{{ date('Y-m-d H:i', strtotime($post->created_at)) }}</span>
                 <h5 class="users">
-                    <img src="../images/icons/{{ $specifiedUser->images }}"  width="50px" alt="icon">
+                    <img src="{{ asset('storage/images/icons/' .$specifiedUser->images) }}"  width="50px" alt="icon">
                     {{ $specifiedUser->username }}
                 </h5>
                 <div class="media-body">

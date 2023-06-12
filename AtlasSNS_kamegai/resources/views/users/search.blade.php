@@ -15,7 +15,7 @@
         @forelse($users as $user)
             @if($user->id !== auth()->user()->id)
                 <div class="user">
-                    <img src="../images/icons/{{ $user->images }}" alt="ユーザーアイコン" width="50px">
+                    <img src="{{ asset('storage/images/icons/'. $user->images) }}" alt="ユーザーアイコン" width="50px">
                     <span>{{ $user->username }}</span>
 
                    @if(auth()->user()->isFollowing($user->id))

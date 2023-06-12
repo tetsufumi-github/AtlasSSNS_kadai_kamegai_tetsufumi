@@ -41,7 +41,10 @@
                 </ul>
             </nav>
         </li>
-        <li><img src="../images/icons/{{Auth::user()->images}}" alt="ユーザーアイコン" width="50px"></li>
+        <li>
+            {{-- 画像が更新される。 --}}
+            <img src="{{ asset('storage/images/icons/' . Auth::user()->images) }}" alt="ユーザーアイコン" width="50px">
+        </li>
     </ul>
 </header>
 
@@ -93,8 +96,5 @@
             </div>
         </div>
     </div>
-    <footer>
-        <small>&copy;kamegai tetsufumi</small>
-    </footer>
 </body>
 </html>

@@ -36,9 +36,18 @@ class UsersController extends Controller
 
             // 画像アップロードとシンボリックリンク
             if ($request->hasFile('image')) {
+                //$request->file('image') はアップロードされたファイルを表します。
+                // getClientOriginalName() メソッドは、アップロードされたファイルの元の名前を取得します。
                 $profileImage = $request->file('image')->getClientOriginalName();
-                $imagePath = $request->file('image')->store('public/images/icons');
-                $imagePath = str_replace('public/', 'storage/', $imagePath);
+
+                // storageフォルダ内のpublicディレクトリに保存する。
+                // storeAs() メソッドは、アップロードされたファイルを指定のディレクトリに保存します。ここでは public/images/icons ディレクトリに保存されます。
+                $publicImagePath = $request->file('image')->storeAs('public/images/icons', $profileImage);
+
+                // str_replace() 関数は、文字列内の特定の部分を別の文字列で置換します。ここでは 'public/' を空文字列に置換しています。
+                $publicImagePath = str_replace('public/', '', $publicImagePath);
+
+                // $user->images には、プロフィール画像のファイル名が代入されます。
                 $user->images = $profileImage;
             }
 

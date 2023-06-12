@@ -7,7 +7,7 @@
 
                 <!-- ログインフォーム用のカード -->
                     <div class="post-body">
-                        <img class="login_user_icon" src="../images/icons/{{Auth::user()->images}}" alt="ユーザーアイコン" width="50px">
+                        <img class="login_user_icon" src="{{ asset('storage/images/icons/' . Auth::user()->images) }}" alt="ユーザーアイコン" width="50px">
                         <form method="POST" action="{{ route('posts.store') }}">
 
                             @csrf
@@ -29,7 +29,7 @@
                         <div class="media">
                             <span class="time_at">{{ date('Y-m-d H:i', strtotime($post->created_at)) }}</span>
                             <h5 class="users">
-                                <img src="../images/icons/{{$post->user->images}}" width="50px" alt="icon">
+                                <img src="{{asset('storage/images/icons/'. $post->user->images)}}" width="50px" alt="icon">
                                 {{ $post->user->username }}
                             </h5>
                             <div class="media-body">
